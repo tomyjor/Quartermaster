@@ -1,0 +1,45 @@
+# --- Secretos -- NUNCA subir esto a un repo público ---
+.env
+
+# --- Datos personales -- tu base tiene tu watchlist real y, si usás
+# login, tus datos de personaje de EVE (cifrados, pero igual no van en
+# un repo compartido). Quien clone el proyecto corre su propio
+# Smart Auto-Seed y arranca con una base propia. ---
+database/trader.db
+database/trader.db-wal
+database/trader.db-shm
+database/*.db
+!database/schema.sql
+
+# --- Logs ---
+logs/
+*.log
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+build/
+dist/
+*.egg
+
+# --- Entornos virtuales ---
+.venv/
+venv/
+env/
+
+# --- Tests ---
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- Editores ---
+.vscode/
+.idea/
+*.swp
+
+# --- OS ---
+.DS_Store
+Thumbs.db

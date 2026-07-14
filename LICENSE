@@ -1,0 +1,44 @@
+Quartermaster — Licencia de uso
+
+Copyright (c) 2026 Toto. Todos los derechos reservados salvo lo
+explícitamente permitido abajo.
+
+## Permitido, sin necesidad de pedir permiso
+
+- Correr, usar y modificar este software para uso personal.
+- Compartirlo con la comunidad de EVE Online sin fines de lucro (por
+  ejemplo, publicar el código, invitar a otros a correrlo ellos mismos,
+  o hostear una instancia gratuita para tu comunidad/corporación).
+- Estudiar el código, aprender de él, y contribuir mejoras.
+- Hacer fork y modificarlo para tu propio uso, siempre que mantengas
+  este aviso de licencia.
+
+## NO permitido sin permiso explícito por escrito del autor
+
+- Vender este software, o cualquier derivado, como producto o servicio
+  comercial (incluyendo, entre otros: cobrar suscripciones, vender
+  acceso, o revenderlo integrado en otro producto).
+- Quitar o modificar este aviso de licencia al redistribuir.
+- Usar el nombre "Quartermaster" para un producto comercial no
+  relacionado con este proyecto.
+
+## Sin garantía
+
+Este software se entrega "tal cual", sin garantía de ningún tipo,
+expresa o implícita. El autor no es responsable de pérdidas de ISK,
+decisiones de trading, ni ningún otro daño derivado de su uso. Las
+recomendaciones que genera son herramientas de apoyo a la decisión, no
+consejo financiero -- la decisión de operar es siempre del usuario.
+
+## Nota sobre EVE Online
+
+EVE Online y todos los assets, marcas, y datos relacionados son
+propiedad de CCP hf. Este proyecto es una herramienta de terceros que
+usa la API pública de ESI (EVE Swagger Interface) bajo los términos del
+Developer License Agreement de CCP -- no está afiliado ni respaldado
+por CCP hf.
+
+## Contacto
+
+Para permisos comerciales o cualquier uso fuera de lo permitido arriba,
+contactar al autor.

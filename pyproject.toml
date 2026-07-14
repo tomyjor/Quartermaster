@@ -1,0 +1,63 @@
+[project]
+name = "quartermaster"
+version = "0.3.0"
+description = "Decision Intelligence System for EVE Online Jita Trading - v2 with Clean Architecture"
+authors = [{name = "Tomas"}]
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0",
+    "streamlit>=1.35",
+    "requests>=2.31",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+api = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "apscheduler>=3.10",
+    "nicegui>=1.4",
+    "cryptography>=42.0",
+    "pyjwt>=2.7",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+# Sin esto, hatchling no sabe qué empaquetar: el proyecto no tiene un
+# único directorio top-level que coincida con el nombre normalizado
+# ("quartermaster") -- son varios paquetes sueltos bajo src/
+# (domain, application, infrastructure, presentation, shared). Esto es
+# lo que rompía `pip install -e .` con "Unable to determine which files
+# to ship inside the wheel".
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/domain",
+    "src/application",
+    "src/infrastructure",
+    "src/presentation",
+    "src/shared",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+
+[tool.pytest.ini_options]
+# Antes había que correr `PYTHONPATH=src pytest` a mano porque no existía
+# este bloque ni conftest.py -- el pythonpath acá abajo hace que
+# `from domain...`, `from application...`, etc. resuelvan solo, sin setear
+# nada en la shell. Requiere pytest>=7.0 (declarado en dev deps arriba).
+# "tests" se agregó para que `_winsafe.py` (helper compartido de limpieza
+# de archivos temporales, ver ese módulo) sea importable como
+# `from _winsafe import safe_unlink` desde cualquier test, sin depender
+# de __init__.py ni de imports relativos frágiles entre carpetas.
+pythonpath = ["src", "tests"]
+testpaths = ["tests"]

@@ -1,0 +1,36 @@
+# Tema visual de Quartermaster.
+#
+# Paleta "trading terminal" oscura con acento ámbar -- deliberadamente
+# evoca la propia interfaz de EVE Online (fondo oscuro + dorado/ámbar
+# para ISK, alertas, elementos destacados), no un dashboard genérico de
+# Streamlit. Para alguien que ya usa la UI de EVE a diario, esto se
+# siente familiar en vez de "otra app de Python con tema default".
+#
+# v2 (rediseño visual completo): fondo ligeramente más frío/profundo y
+# secondaryBackground más diferenciado, para que la jerarquía entre
+# fondo/tarjeta/tarjeta-elevada se note sin depender solo de bordes.
+#
+# Ver también: src/presentation/streamlit_app/theme.py (sistema de
+# diseño completo -- tokens de color, tipografía, spacing -- inyectado
+# en runtime, ya que theme.toml de Streamlit no cubre fuentes
+# personalizadas, tracking de letras, ni componentes custom).
+
+[theme]
+base = "dark"
+
+# Ámbar/dorado -- el color de acento de EVE (ISK, resaltados de UI,
+# advertencias del HUD). Se usa en botones primarios, sliders, y bordes
+# de foco.
+primaryColor = "#E8A33D"
+
+# Fondo casi negro con un toque azulado frío, como la ventana de mercado
+# del propio juego.
+backgroundColor = "#0B0D12"
+
+# Un tono más claro para tarjetas/contenedores/sidebar, con suficiente
+# contraste contra el fondo para separar visualmente cada oportunidad
+# sin usar bordes duros por todos lados.
+secondaryBackgroundColor = "#151822"
+
+textColor = "#F0EEE8"
+font = "sans serif"
